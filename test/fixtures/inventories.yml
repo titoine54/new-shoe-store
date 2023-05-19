@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store_id: one
+  model_id: one
+  inventory: 1
+
+two:
+  store_id: two
+  model_id: two
+  inventory: 1
