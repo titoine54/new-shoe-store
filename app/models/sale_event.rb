@@ -1,0 +1,2 @@
+class SaleEvent < ApplicationRecord
+end

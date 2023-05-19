@@ -38,9 +38,23 @@
     </ul>
   </div>
   <div class="column">
+    <h2>Best sellers today</h2>
+    <table style="color:green; display:table-header-group">
+      <tr>
+        <th>Model</th>
+        <th>Number of sales</th>
+      </tr>
+  <% @top_sellers.each do |row| %>                    
+      <tr>
+        <td><%= row[0] %></td>
+        <td><%= row[1] %></td>
+      </tr>
+  <% end %>
+    </table>
+  
     <h2>Highest average inventory</h2>
     <p>** Accross all stores</p>
-    <table style="color:green; display:table-header-group">
+    <table style="color:orange; display:table-header-group">
       <tr>
         <th>Model</th>
         <th>Inventory average</th>
