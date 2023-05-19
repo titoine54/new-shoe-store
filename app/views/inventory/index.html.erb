@@ -1,20 +1,41 @@
 <h1>Inventory</h1>
 
-<h2>By store:</h2>
-<ul>
-  <% @stores.each do |store| %>
-    <li>
-      <%= link_to store.name, "/store/#{store.id}" %>
-    </li>
-  <% end %>
-</ul>
-
-
-<h2>By model:</h2>
-<ul>
-  <% @models.each do |model| %>
-    <li>
-      <%= link_to model.name, "/model/#{model.id}" %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="column">
+    <h2>Alerts - low inventory</h2>
+    <table style="color:red; display:table-header-group">
+        <tr>
+            <th>Store</th>
+            <th>Model</th>
+            <th>Inventory</th>
+        </tr>
+    <% @alerts.each do |alert| %>                    
+        <tr>
+            <td><%= alert.store.name %></td>
+            <td><%= alert.model.name %></td>
+            <td><%= alert.inventory %></td>
+        </tr>
+    <% end %>
+    </table>
+  </div>
+  <div class="column">
+    <h2>By store:</h2>
+    <ul>
+      <% @stores.each do |store| %>
+        <li>
+          <%= link_to store.name, "/store/#{store.id}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>By model:</h2>
+    <ul>
+      <% @models.each do |model| %>
+        <li>
+          <%= link_to model.name, "/model/#{model.id}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

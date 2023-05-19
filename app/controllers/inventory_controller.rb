@@ -4,6 +4,7 @@ class InventoryController < ApplicationController
   def index
     @stores = Store.all
     @models = Model.all
+    @alerts = Inventory.where("inventory < ? ", 10)
   end
 
   def add

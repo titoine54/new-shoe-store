@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ .column {
+    float: left;
+    margin-left: 2%;
+    width: 30%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } 
