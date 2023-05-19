@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   root "inventory#index"
   get "/inventory", to: "inventory#index"
+  post "/inventory", to: "inventory#add"
 end
