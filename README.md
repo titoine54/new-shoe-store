@@ -4,11 +4,13 @@
 - start inventory generator (websocket): `.\websocketd.exe --port=8080 ruby .\inventory.rb`
 - start the client service: `ruby.exe .\client.rb`
 - start rails server: `rails server`
+  - run `rails db:migrate` to configure the db if necessary
 
 # Details
 - The inventory generator publishes information about the changes in inventory to a websocket.
 - The client service connects to this socket and listens for the data. When the data is received, it is parsed, then set over a HTTP call to the rails server
 - The rails server receives the inventory update. The controller associated with the route saves the information in the database:
+  - Records the sale in teh SaleEvent model for auditiing purposes
   - Creates the store if necessary
   - Creates the model if necessary 
   - Updates the associated entry in the inventory table (create or update)
@@ -16,3 +18,5 @@
   - The shoes that are going low on stock
   - A list of all the stores with a link to the store's detailed inventory page
   - A list of all the models with a link to find the inventory of that model in all stores
+  - A list of the top 5 most sold models for the day
+  - A list of the lowest and highest average inventory by models
