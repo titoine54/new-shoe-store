@@ -3,6 +3,7 @@ class StoreController < ApplicationController
   
   def show
     @store = Store.find(params[:id])
+
+    @inventory = Inventory.where(store_id: @store.id)
   end
 end
-

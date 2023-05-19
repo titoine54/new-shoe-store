@@ -1,2 +1,22 @@
-<h1>Models</h1>
-<h3> <%= p @model.name %> </h3>
+<h1>Model</h1>
+<h3> <%= @model.name %> </h3>
+
+<table>
+    <tr>
+        <th>Store</th>
+        <th>Inventory</th>
+    </tr>
+<% @inventory.each do |row| %>                    
+    
+  <% if row.inventory < 10 %>
+    <tr style="color:red">
+  <% else %>
+    <tr>
+  <% end %>
+        <td><%= row.store.name %><td>
+        <td><%= row.inventory %></td>
+    </tr>
+<% end %>
+</table>
+
+<%= link_to "Home Page", "/" %>

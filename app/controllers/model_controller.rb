@@ -3,5 +3,7 @@ class ModelController < ApplicationController
   
   def show
     @model = Model.find(params[:id])
+
+    @inventory = Inventory.where(model_id: @model.id)
   end
 end
