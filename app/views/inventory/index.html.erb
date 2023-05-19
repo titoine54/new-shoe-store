@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="column">
-    <h2>Alerts - low inventory</h2>
+  <h2>Alerts - low inventory</h2>
     <table style="color:red; display:table-header-group">
         <tr>
             <th>Store</th>
@@ -27,8 +27,7 @@
         </li>
       <% end %>
     </ul>
-  </div>
-  <div class="column">
+
     <h2>By model:</h2>
     <ul>
       <% @models.each do |model| %>
@@ -37,5 +36,36 @@
         </li>
       <% end %>
     </ul>
+  </div>
+  <div class="column">
+    <h2>Highest average inventory</h2>
+    <p>** Accross all stores</p>
+    <table style="color:green; display:table-header-group">
+      <tr>
+        <th>Model</th>
+        <th>Inventory average</th>
+      </tr>
+  <% @high_inventory.each do |row| %>                    
+      <tr>
+        <td><%= row[0] %></td>
+        <td><%= row[1] %></td>
+      </tr>
+  <% end %>
+    </table>
+
+    <h2>Lowest average inventory</h2>
+    <p>** Accross all stores</p>
+    <table style="color:orange; display:table-header-group">
+      <tr>
+        <th>Model</th>
+        <th>Inventory average</th>
+      </tr>
+  <% @low_inventory.each do |row| %>                    
+      <tr>
+        <td><%= row[0] %></td>
+        <td><%= row[1] %></td>
+      </tr>
+  <% end %>
+    </table>
   </div>
 </div>
