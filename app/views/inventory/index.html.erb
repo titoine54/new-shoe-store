@@ -1,2 +1,20 @@
-<h1>Inventory#index</h1>
-<p>Find me in app/views/inventory/index.html.erb</p>
+<h1>Inventory</h1>
+
+<h2>By store:</h2>
+<ul>
+  <% @stores.each do |store| %>
+    <li>
+      <%= link_to store.name, "/store/#{store.id}" %>
+    </li>
+  <% end %>
+</ul>
+
+
+<h2>By model:</h2>
+<ul>
+  <% @models.each do |model| %>
+    <li>
+      <%= link_to model.name, "/model/#{model.id}" %>
+    </li>
+  <% end %>
+</ul>

@@ -2,6 +2,8 @@ class InventoryController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def index
+    @stores = Store.all
+    @models = Model.all
   end
 
   def add
